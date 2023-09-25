@@ -19,7 +19,7 @@ int main() {
 
         cout << " -> " << flush;
 
-        BubbleSort(arr, size);
+        InsertionSort(arr, size);
 
         for (int e = 0; e < size; ++e) {
           cout << arr[e] << " " << flush;
