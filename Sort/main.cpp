@@ -19,7 +19,7 @@ int main() {
 
         cout << " -> " << flush;
 
-        SelectionSort(arr, size);
+        BubbleSort(arr, size);
 
         for (int e = 0; e < size; ++e) {
           cout << arr[e] << " " << flush;
