@@ -50,5 +50,57 @@ void SelectionSort(int *arr, int size) {
     }
   }
 }
+```
 
+## 버블 정렬 (Bubble Sort)
+버블 정렬은 배열을 정렬하는 가장 기본적인 알고리즘 중 하나입니다. 이 알고리즘은 인접한 두 원소를 비교하여 조건에 맞지 않으면 서로 위치를 바꾸는 작업을 반복합니다. 
+
+[Bubble sort - Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort)
+
+### 작동 방식
+1. 배열의 처음부터 끝까지 이동하면서 인접한 원소를 비교합니다.
+2. 만약 인접한 두 원소가 정렬되어 있지 않다면(즉, 뒤의 원소가 앞의 원소보다 작다면), 두 원소의 위치를 서로 바꿉니다.
+3. 이 과정을 배열의 끝까지 반복합니다.
+4. 이러한 반복이 한 번 끝나면 배열의 가장 큰 원소가 배열의 끝으로 이동하게 됩니다.
+5. 배열의 크기를 하나 줄인 다음 1~3 단계를 반복합니다.
+
+### 시간 복잡도
+버블 정렬은 코드가 간단하고 이해하기 쉽지만, 대용량 데이터에는 비효율적입니다. 다른 고급 정렬 알고리즘과 비교할 때 매우 느린 편입니다.
+
+- 최악의 경우: \(O(n^2)\)
+- 최선의 경우: \(O(n)\) (이미 정렬된 배열)
+- 평균 경우: \(O(n^2)\)
+
+### C++ 코드 예제
+
+```cpp
+#include <iostream>
+
+void BubbleSort(int *arr, int size) {
+  for (int i = 0; i < size - 1; ++i) {
+    for (int j = 0; j < size - i - 1; ++j) {
+      if (arr[j] > arr[j + 1]) {
+        // Swap(arr[j], arr[j + 1])
+        int temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+}
+
+int main() {
+  int arr[] = {64, 34, 25, 12, 22, 11, 90};
+  int size = sizeof(arr) / sizeof(arr[0]);
+  
+  BubbleSort(arr, size);
+  
+  // Print sorted array
+  for (int i = 0; i < size; ++i) {
+    std::cout << arr[i] << ' ';
+  }
+  std::cout << std::endl;
+  
+  return 0;
+}
 ```
